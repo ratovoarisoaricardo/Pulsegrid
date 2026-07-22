@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PulseGrid AI | Real-Time Streaming Analytics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div class="header">
+    <h1>⚡ PulseGrid AI</h1>
+    <p>High-Frequency Real-Time Streaming Analytics & Machine Learning Anomaly Detection</p>
+    <div id="connection-status" class="status-badge status-connecting">WebSocket: Connecting...</div>
+  </div>
+
+  <div class="metrics-row">
+    <div class="metric-card">
+      <div class="metric-title">API Latency</div>
+      <div class="metric-value" id="val-latency">-- ms</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-title">CPU Load</div>
+      <div class="metric-value" id="val-cpu">-- %</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-title">Throughput</div>
+      <div class="metric-value" id="val-throughput">-- req/s</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-title">Anomaly Status</div>
+      <div class="metric-value" id="val-anomaly">Normal</div>
+    </div>
+  </div>
+
+  <div class="main-content">
+    <div class="chart-container">
+      <h3>📈 Live Latency Stream (WebSocket)</h3>
+      <canvas id="liveChart"></canvas>
+    </div>
+
+    <div class="alerts-container">
+      <h3>🚨 Real-Time Anomaly Feed</h3>
+      <div id="alerts-list">
+        <p class="empty-msg">Monitoring stream for Z-score anomaly spikes...</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="/static/main.js"></script>
+</body>
+</html>
